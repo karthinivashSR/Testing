@@ -42,6 +42,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
   Jest packages : npm install --save-dev jest @testing-library/react @testing-library/jest-dom
   JSdom : npm install -D jest-environment-jsdom
+  package.json : "test": "jest --watch"
   jest.config.js : 
     const nextJest = require("next/jest");
     const createJestConfig = nextJest({
@@ -52,5 +53,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     testEnvironment: "jest-environment-jsdom",
     };
     module.exports = createJestConfig(customJestConfig);
-  package.json : "test": "jest --watch"
 
