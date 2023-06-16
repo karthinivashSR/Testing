@@ -36,3 +36,21 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+##Test Framwork setup
+
+  Jest packages : npm install --save-dev jest @testing-library/react @testing-library/jest-dom
+  JSdom : npm install -D jest-environment-jsdom
+  jest.config.js : 
+    const nextJest = require("next/jest");
+    const createJestConfig = nextJest({
+    dir: "./",
+    });
+    const customJestConfig = {
+    moduleDirectories: ["node_modules", "<rootDir>/"],
+    testEnvironment: "jest-environment-jsdom",
+    };
+    module.exports = createJestConfig(customJestConfig);
+  package.json : "test": "jest --watch"
+
